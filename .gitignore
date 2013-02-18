@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+
+# Maven Goodness
+target/*
+
+# IntelliJ Goodness
+.idea/*
+
