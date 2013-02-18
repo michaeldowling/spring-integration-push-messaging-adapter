@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.minderupt.com/schema/integration/pushmsg"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.minderupt.com/schema/integration/pushmsg"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+    <xsd:import namespace="http://www.springframework.org/schema/tool"/>
+    <xsd:import namespace="http://www.springframework.org/schema/integration"
+                schemaLocation="http://www.springframework.org/schema/integration/spring-integration-2.2.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[
+	Defines the configuration elements for Minderupt's Spring Integration Push Messaging Channel Adapters.
+		]]></xsd:documentation>
+    </xsd:annotation>
+
+
+</xsd:schema>
