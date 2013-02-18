@@ -1,0 +1,26 @@
+<project name="spring-integration-push-messaging-adapter">
+
+    <bannerLeft>
+        <name>spring-integration-push-messaging-adapter</name>
+        <src>http://3.bp.blogspot.com/-DOe_PpVDr_s/UK2iolxBjcI/AAAAAAAAAbk/9PDP3_zMJvw/s1600/brain_explode.png</src>
+        <href>http://blog.michaeldowling.me/</href>
+    </bannerLeft>
+
+    <publishDate position="right"/>
+    <version position="right"/>
+    <poweredBy>
+        <logo name="Spring Framework" href="http://www.springsource.org/spring-framework"
+              img="/images/spring-logo-160x92.png"/>
+    </poweredBy>
+
+    <body>
+
+        <menu name="Overview">
+            <item name="Introduction" href="index.html"/>
+            <item name="FAQ" href="faq.html"/>
+        </menu>
+
+    </body>
+
+
+</project>
