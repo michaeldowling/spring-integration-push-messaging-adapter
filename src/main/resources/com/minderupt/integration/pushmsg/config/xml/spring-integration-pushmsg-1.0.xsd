@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.minderupt.com/schema/integration/pushmsg"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tool="http://www.springframework.org/schema/tool"
+            xmlns:integration="http://www.springframework.org/schema/integration"
             targetNamespace="http://www.minderupt.com/schema/integration/pushmsg"
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
@@ -16,6 +18,60 @@
 	Defines the configuration elements for Minderupt's Spring Integration Push Messaging Channel Adapters.
 		]]></xsd:documentation>
     </xsd:annotation>
+
+
+    <xsd:element name="outbound-apns-pushmsg-adapter">
+
+        <xsd:complexType>
+            <xsd:annotation>
+                <xsd:documentation>
+                    Defines an outbound Apple APNS Push Message/Notification Channel Adapter.
+                </xsd:documentation>
+            </xsd:annotation>
+
+            <xsd:choice minOccurs="0" maxOccurs="2">
+                <xsd:element ref="integration:poller" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="request-handler-advice-chain" type="integration:adviceChainType" minOccurs="0"
+                             maxOccurs="1"/>
+            </xsd:choice>
+
+            <xsd:attribute name="id" type="xsd:string"/>
+
+            <xsd:attribute name="input-channel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <tool:annotation kind="ref">
+                            <tool:expected-type type="org.springframework.integration.MessageChannel"/>
+                        </tool:annotation>
+                    </xsd:appinfo>
+                </xsd:annotation>
+            </xsd:attribute>
+
+            <xsd:attribute name="feedback-channel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <tool:annotation kind="ref">
+                            <tool:expected-type type="org.springframework.integration.MessageChannel"/>
+                        </tool:annotation>
+                    </xsd:appinfo>
+                </xsd:annotation>
+            </xsd:attribute>
+
+            <xsd:attribute name="error-channel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <tool:annotation kind="ref">
+                            <tool:expected-type type="org.springframework.integration.MessageChannel"/>
+                        </tool:annotation>
+                    </xsd:appinfo>
+                </xsd:annotation>
+            </xsd:attribute>
+
+
+        </xsd:complexType>
+
+
+    </xsd:element>
 
 
 </xsd:schema>

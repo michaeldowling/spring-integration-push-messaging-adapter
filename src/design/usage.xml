@@ -1,1 +1,22 @@
-<int-pushmsg:outbound-pushmsg-adapter input-channel="channel name"
+<int-pushmsg:outbound-apns-pushmsg-adapter input-channel="channel-name"
+                                           feedback-channel="channel-name"
+                                           error-channel="channel-name"
+                                           certificate-path="/path/to/cert"
+                                           apns-host="gateway.push.apple.com"
+                                           apns-port="2195"/>
+
+
+<int-pushmsg:outbound-gcm-pushmsg-adapter input-channel="channel-name"
+                                          feedback-channel="channel-name"
+                                          error-channel="channel-name"
+                                          api-key="THIS IS MY KEY"
+                                          gcm-host="gateway.push.apple.com"
+                                          gcm-port="2195"/>
+
+<int-pushmsg:outbound-urbanairship-pushmsg-adapter input-channel="channel-name"
+                                                   feedback-channel="channel-name"
+                                                   error-channel="channel-name"
+                                                   api-key="THIS IS MY KEY"
+                                                   master-secret="THIS IS MY SECRET"
+                                                   urbanairship-api-host="gateway.push.apple.com"
+                                                   urbanairship-api--port="2195"/>
