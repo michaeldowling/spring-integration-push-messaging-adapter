@@ -12,6 +12,8 @@
 
     <build>
         <plugins>
+
+            <!-- Site Documentation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -24,12 +26,47 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+            <!-- For Test Coverage -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.5.2</version>
+            </plugin>
+
         </plugins>
     </build>
 
 
+    <reporting>
+        <plugins>
+
+            <!-- Reporting Unit Test Code Coverage -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+
+    </reporting>
+
+
     <dependencies>
         <!-- External Dependencies -->
+        <dependency>
+            <groupId>com.notnoop.apns</groupId>
+            <artifactId>apns</artifactId>
+            <version>0.1.6</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>com.springsource.org.apache.commons.logging</artifactId>

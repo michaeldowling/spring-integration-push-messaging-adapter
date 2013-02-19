@@ -26,11 +26,23 @@ import org.w3c.dom.Element;
 
 public class APNSPushMessageOutboundChannelAdapterParser extends AbstractOutboundChannelAdapterParser {
 
+
     @Override
     protected AbstractBeanDefinition parseConsumer(Element element, ParserContext parserContext) {
 
         BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(APNSPushMessageSendingMessageHandler.class);
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+
+        // get the standard, required attributes
+        String certificatePath = element.getAttribute(ParserConstants.ATTRIBUTE_NAME_CERTIFICATE_PATH);
+        String apnsHost = element.getAttribute(ParserConstants.ATTRIBUTE_NAME_APNS_HOST);
+        Integer apnsPort = Integer.parseInt(element.getAttribute(ParserConstants.ATTRIBUTE_NAME_APNS_PORT));
+
+        // set constructor arguments
+        builder.addConstructorArgValue(certificatePath);
+        builder.addConstructorArgValue(apnsHost);
+        builder.addConstructorArgValue(apnsPort);
+
+        return builder.getBeanDefinition();
 
     }
 

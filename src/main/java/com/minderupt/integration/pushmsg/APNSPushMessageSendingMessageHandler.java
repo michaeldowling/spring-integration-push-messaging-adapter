@@ -22,8 +22,46 @@ import org.springframework.integration.handler.AbstractMessageHandler;
 
 public class APNSPushMessageSendingMessageHandler extends AbstractMessageHandler {
 
+    private String apnsHost;
+    private Integer apnsPort;
+    private String certificatePath;
+
+
+    public APNSPushMessageSendingMessageHandler(String certificatePath, String apnsHost, Integer apnsPort) {
+
+        this.apnsHost = apnsHost;
+        this.apnsPort = apnsPort;
+        this.certificatePath = certificatePath;
+
+    }
+
+
     @Override
     protected void handleMessageInternal(Message<?> message) throws Exception {
         //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public String getApnsHost() {
+        return apnsHost;
+    }
+
+    public void setApnsHost(String apnsHost) {
+        this.apnsHost = apnsHost;
+    }
+
+    public Integer getApnsPort() {
+        return apnsPort;
+    }
+
+    public void setApnsPort(Integer apnsPort) {
+        this.apnsPort = apnsPort;
+    }
+
+    public String getCertificatePath() {
+        return certificatePath;
+    }
+
+    public void setCertificatePath(String certificatePath) {
+        this.certificatePath = certificatePath;
     }
 }
